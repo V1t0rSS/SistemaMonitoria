@@ -1,15 +1,25 @@
+/* Acho que as variáveis precisam estar dentro de um seletor
+   então eu apliquei a tudo */
 *{
     --verde:#30706f;
     --bege:#e4f1e1;
     --palha:#cde688;
     --vermelho:#851630;
     --texto-claro:#ffffff;
-    --text-escuro:#000000;
+    --text-escuro:#1b1a1a;
+    --escuro:#183b25;
+    --claro:#eeecec;
 }
 
+body{
+    height: 100%;
+}
+
+/* barra de navegação */
 nav{
     width: 100%;
-
+    padding-left: 5px;
+    padding-right: 5px;
     display: block !important;
     height: 60px;
     background-color: var(--verde);
@@ -17,6 +27,7 @@ nav{
     top: 0;
 }
 
+/* Links da barra de navegação */
 nav a {
     display:block;
     text-align: center;
@@ -33,12 +44,11 @@ nav a {
 nav a:not(#logo):hover{
     background-color:var(--texto-claro) !important;
     color: var(--text-escuro);
-    border-bottom: 5px solid black;
+    border-bottom: 4px solid var(--escuro);
+    text-underline-offset:4px;
+    text-decoration: underline;
 }
 
-body{
-    height: 100%;
-}
 
 #content{
     height: 60%;
