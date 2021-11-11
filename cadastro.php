@@ -21,30 +21,35 @@
 
     <div id="content" class="container clearfix bg-light">
 
-        <h2 id="titulo" class="display-6">Preencha o cadastro abaixo</h2>
+        <h1 id="titulo" class="display-6">Preencha o cadastro abaixo</h1>
+
+        <div id="alert-blank" class="text-center"> 
+            <i class= "bi bi-exclamation-circle"></i> 
+            <span>Todos os campos marcados em vermelho devem ser preenchidos</span>
+        </div>
 
         <form>
 
             <label for="nome">Nome</label>
-            <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" required>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" >
 
             <label for="tel">Telefone</label>
-            <input type="phone" class="form-control" id="tel" placeholder="DIgite seu telefone" required>
+            <input type="phone" class="form-control" id="tel" placeholder="DIgite seu telefone" >
 
             <label for="matricula">Matrícula</label>
-            <input type="text" class="form-control" id="matricula" name="matricula" placeholder="Digite sua matrícula" required>
+            <input type="text" class="form-control" id="matricula" name="matricula" placeholder="Digite sua matrícula" >
 
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Digite seu email" required>
+            <input type="email" class="form-control" id="email" placeholder="Digite seu email" >
 
             <label for="email2">Confirme seu email</label>
-            <input type="email" class="form-control" id="email2" placeholder="Confirme seu email" required>
+            <input type="email" class="form-control" id="email2" placeholder="Confirme seu email" >
 
             <label for="senha">Senha</label>
-            <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite uma senha" required>
+            <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite uma senha" >
 
             <label for="senha2">Senha</label>
-            <input type="password" class="form-control" id="senha2" name="senha2" placeholder="Confirme sua senha" required>
+            <input type="password" class="form-control" id="senha2" name="senha2" placeholder="Confirme sua senha" >
 
             <button id="enviar" type="submit" class="btn">Enviar</button>
 

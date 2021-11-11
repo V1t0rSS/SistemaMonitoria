@@ -12,14 +12,31 @@ label{
 
 #enviar{
     display: block;
-    width: 100%;
+    width: 50%;
     background-color: var(--verde);
     color: var(--texto-claro);
+    box-shadow: 0px 0px 1px 1px gray;
     font-size: 1.5em;
-    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
 }
 
 #titulo{
     margin-bottom: 50px;
     text-align: center !important;
+}
+
+.hidden{
+    display: none;
+}
+
+#alert-blank{
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: rgba(228, 0, 0, 0.616);
+    color: white;
+    width: fit-content;
+    margin: auto;
+    border-radius: 50px;
 }

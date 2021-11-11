@@ -1,21 +1,21 @@
 /* Acho que as variáveis precisam estar dentro de um seletor
    então eu apliquei a tudo */
 *{
-    --verde:#348376;
+    --verde:#288d5e;
+    --verde-transparente:#288d5bef;
     --bege:#e9eee7;
     --palha:#cde688;
-    --vermelho:#851630;
+    --vermelho:#a00d2f;
     --texto-claro:#ffffff;
     --text-escuro:#1b1a1a;
-    --escuro:#183b25;
+    --escuro:#245c38;
     --claro:#dbddda;
 }
 
-body{
+/* Usado para forçar a altura da area de conteúdo e deixar o fundo mais escuro */
+html, body{
     height: 100%;
     background-color: var(--claro);
-    display: flex;
-    justify-content: center;
 }
 
 /* barra de navegação */
@@ -24,14 +24,14 @@ nav{
     padding-left: 5px;
     padding-right: 5px;
     display: block !important;
-    height: 60px;
-    background-color: var(--verde);
+    height: 70px;
+    background-color: var(--verde-transparente);
     position: fixed;
     top: 0;
     box-shadow: 3px 0px 3px 3px var(--escuro);
 }
 
-/* Links da barra de navegação */
+/* Links da barra de navegação e logo */
 nav a, nav button {
     display:block;
     text-align: center;
@@ -39,8 +39,9 @@ nav a, nav button {
     margin-left:10px;
     text-decoration:none;
     color: var(--texto-claro);
-    padding: 15px;
+    padding: 23px;
     height: 100%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 nav a:not(#logo):hover{
@@ -49,40 +50,20 @@ nav a:not(#logo):hover{
     border-bottom: 4px solid var(--escuro);
 }
 
-
-#content{
-    height: 90%;
-    padding: 30px 10%;
-    box-shadow: 1px 1px 1px 1px lightgray;
-    margin-top: 100px;
-    margin-bottom: 10px;
-}
-
 #logo{
     float: left;
-    font-size: 1.5em;
-    font-weight: 3px;
-    font-family: sans-serif;
+    font-size: 2em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: center;
     text-decoration: none;
     color: var(--texto-claro);
     padding: 10px;
 }
 
-#main{
-    padding-bottom: 40px;
-}
-
-footer{
-    width: 100%;
-    background-color: var(--verde);
-    color: var(--texto-claro);
-    position:absolute;
-    bottom: 0;
-}
-
-footer p{
-    text-align: center;
-    padding: 5px;
-    margin: 0;
+/* Container do conteúdo */
+#content{
+    height: 95%;
+    padding: 25px 10%;
+    box-shadow: 1px 1px 1px 1px lightgray;
+    margin-top: 100px;
 }
