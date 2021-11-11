@@ -1,0 +1,25 @@
+@import url(style.css);
+
+input{
+    margin-bottom: 20px !important;
+    width: 100% !important;
+}
+
+label{
+    margin-left: 1px;
+    margin-bottom:5px;
+}
+
+#enviar{
+    display: block;
+    width: 100%;
+    background-color: var(--verde);
+    color: var(--texto-claro);
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+#titulo{
+    margin-bottom: 50px;
+    text-align: center !important;
+}
