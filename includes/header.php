@@ -1,7 +1,7 @@
 <nav class="clearfix">
     <span>
         <img src="" alt="">
-        <a id="logo" href="index.php">Sistema De Tutoria</a>
+        <a id="logo" href="index.php">MonitoriasOnline</a>
     </span>
 
     <a  href="cadastro.php">Cadastro</a>

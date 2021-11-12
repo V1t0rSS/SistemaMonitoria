@@ -1,14 +1,12 @@
 /* Acho que as variáveis precisam estar dentro de um seletor
    então eu apliquei a tudo */
 *{
-    --verde:#288d5e;
-    --verde-transparente:#288d5bef;
-    --bege:#e9eee7;
-    --palha:#cde688;
-    --vermelho:#a00d2f;
+    --verde:#9fd855ef;
+    --verde-escuro: #002A22;
+    --marrom:#635255;
     --texto-claro:#ffffff;
-    --text-escuro:#1b1a1a;
-    --escuro:#245c38;
+    --text-escuro:#000000;
+    --escuro:#000000;
     --claro:#dbddda;
 }
 
@@ -25,10 +23,10 @@ nav{
     padding-left: 5px;
     padding-right: 5px;
     height: 70px;
-    background-color: var(--verde-transparente);
+    background-color: var(--verde);
     position: fixed;
     top: 0;
-    box-shadow: 3px 0px 3px 3px var(--escuro);
+    box-shadow: 0 0 0.5em gray;
 }
 
 /* Links da barra de navegação e logo */
@@ -36,10 +34,11 @@ nav a, nav button {
     float: right;
     margin-left:10px;
     text-decoration:none;
-    color: var(--texto-claro);
+    color: var(--texto-escuro);
     padding: 23px;
     height: 100%;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2em;
 }
 
 nav a:not(#logo):hover{
@@ -51,17 +50,17 @@ nav a:not(#logo):hover{
 #logo{
     float: left;
     font-size: 2em;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     text-decoration: none;
-    color: var(--texto-claro);
-    padding: 10px;
+    color: var(--texto-escuro);
+    padding: 12px;
 }
 
 /* Container do conteúdo */
 #content{
     min-height: 90vh;
     padding: 25px;
-    box-shadow: 1px 1px 1px 1px lightgray;
+    box-shadow: 0 0 0.5em gray;
     margin-top: 100px;
     margin-bottom: 30px;
 

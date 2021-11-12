@@ -14,7 +14,7 @@ label{
     display: block;
     width: 50%;
     background-color: var(--verde);
-    color: var(--texto-claro);
+    color: var(--texto-escuro);
     box-shadow: 0px 0px 1px 1px gray;
     font-size: 1.5em;
     margin-left: auto;
