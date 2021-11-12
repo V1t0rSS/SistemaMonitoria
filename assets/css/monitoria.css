@@ -1,0 +1,29 @@
+@import url(style.css);
+
+
+h1{
+    margin-bottom: 40px;
+}
+
+#calendario{
+    width: 80%;
+    background-color: var(--bege);
+}
+
+#calendario .row{
+    border: inherit;
+}
+
+#calendario .col{
+    outline: 1px solid gray;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+#calendario-header{
+    height: 30px !important;
+    text-align: center;
+    background-color: lightgray;
+    padding: 0 !important;
+}
