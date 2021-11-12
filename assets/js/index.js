@@ -1,5 +1,4 @@
-//Esconde a mensagem de erro na tela de cadastro assim que ela aparecer
-$("#alert-blank").hide()
+
 
 //Garante que todas as células do calendário tem o mesmo tamanho
 var alt_celula = $("#calendario .col").css("width")
@@ -26,45 +25,14 @@ $("#enviar").on("click",e=>{
      * futuramente: email invalido: 4;
      * futuramente: senha inválida: 5;
      */
-
+    var error_message
     var erro = 0
     
-    //Verifica se os campos estão vazios
-    if(!(nome.val())){
-        nome.css({"border":"2px solid red"})
-        erro = 1
-    }else{
-        nome.css({"border":"1px solid lightgray"})
-    }
+    
 
-    if(!(tel.val())){
-        tel.css({"border":"2px solid red"})
-        erro = 1
-    }else{
-        tel.css({"border":"1px solid lightgray"})
-    }
+    //Verifica os campos 
 
-    if(!(mat.val())){
-        mat.css({"border":"2px solid red"})
-        erro = 1
-    }else{
-        mat.css({"border":"1px solid lightgray"})
-    }
-
-    if(!(email.val())){
-        email.css({"border":"2px solid red"})
-        erro = 1
-    }else{
-        email.css({"border":"1px solid lightgray"})
-    }
-
-    if(!(email2.val())){
-        email2.css({"border":"2px solid red"})
-        erro = 1
-    }else{
-        email2.css({"border":"1px solid lightgray"})
-    }
-
+    //Senha
     if(!(senha.val())){
         senha.css({"border":"2px solid red"})
         erro = 1
@@ -72,21 +40,92 @@ $("#enviar").on("click",e=>{
         senha.css({"border":"1px solid lightgray"})
     }
 
+    //Senha2
     if(!(senha2.val())){
         senha2.css({"border":"2px solid red"})
         erro = 1
     }else{
         senha2.css({"border":"1px solid lightgray"})
+        //Verifica se as senhas são iguais
+        if(senha.val() != senha2.val()){
+            senha.css({"border":"2px solid red"})
+            senha2.css({"border":"2px solid red"})
+            erro = 3
+        }else{
+            senha.css({"border":"1px solid lightgray"})
+            senha2.css({"border":"1px solid lightgray"})
+        }
+    }
+    
+    //Email
+    if(!(email.val())){
+        email.css({"border":"2px solid red"})
+        erro = 1
+    }else{
+        email.css({"border":"1px solid lightgray"})
+    }
+
+    //Email2
+    if(!(email2.val())){
+        email2.css({"border":"2px solid red"})
+        erro = 1
+    }else{
+        email2.css({"border":"1px solid lightgray"})
+        //Verifica se emails são iguais
+        if(email.val() != email2.val()){
+            email.css({"border":"2px solid red"})
+            email2.css({"border":"2px solid red"})
+            erro = 2
+        }else{
+            email.css({"border":"1px solid lightgray"})
+            email2.css({"border":"1px solid lightgray"})
+        }
+    }
+
+    //Matricula
+    if(!(mat.val())){
+        mat.css({"border":"2px solid red"})
+        erro = 1
+    }else{
+        mat.css({"border":"1px solid lightgray"})
+    }
+
+    //Telefone
+    if(!(tel.val())){
+        tel.css({"border":"2px solid red"})
+        erro = 1
+    }else{
+        tel.css({"border":"1px solid lightgray"})
+    }
+
+    //Nome
+    if(!(nome.val())){
+        nome.css({"border":"2px solid red"})
+        erro = 1
+    }else{
+        nome.css({"border":"1px solid lightgray"})
     }
     
     //Mostra uma mensagem diferente dependendo do erro
 
     switch (erro){
         case 0:
-            $("#alert-blank").hide(300)
+            $("#alert-blank").css({"display" : "none"} )
             break;
         case 1:
-            $("#alert-blank").show(300)
+            error_message = "Todos os campos marcados em vermelho devem ser preenchidos"
+            $("#alert-blank").text(error_message)
+            $("#alert-blank").css({"display" : "revert"} )
+            break;
+        case 2:
+            error_message = "Os emails não batem"
+            $("#alert-blank").text(error_message)
+            $("#alert-blank").css({"display" : "revert"} )
+            break;
+        case 3:
+            error_message = "As senhas não batem"
+            $("#alert-blank").text(error_message)
+            $("#alert-blank").css({"display" : "revert"} )
             break;
         default:
             break;

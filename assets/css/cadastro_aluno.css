@@ -39,4 +39,5 @@ label{
     width: fit-content;
     margin: auto;
     border-radius: 50px;
+    display: none;
 }

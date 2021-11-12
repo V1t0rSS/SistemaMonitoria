@@ -24,31 +24,31 @@
 
         <div id="alert-blank" class="text-center"> 
             <i class= "bi bi-exclamation-circle"></i> 
-            <span>Todos os campos marcados em vermelho devem ser preenchidos</span>
+            <span></span>
         </div>
 
         <form>
 
             <label for="nome">Nome</label>
-            <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" >
+            <input autocomplete type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" >
 
             <label for="tel">Telefone</label>
-            <input type="phone" class="form-control" id="tel" placeholder="DIgite seu telefone" >
+            <input autocomplete type="phone" class="form-control" id="tel" placeholder="DIgite seu telefone" >
 
             <label for="matricula">Matrícula</label>
-            <input type="text" class="form-control" id="matricula" name="matricula" placeholder="Digite sua matrícula" >
+            <input autocomplete="off" type="text" class="form-control" id="matricula" name="matricula" placeholder="Digite sua matrícula" >
 
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Digite seu email" >
+            <input autocomplete type="email" class="form-control" id="email" placeholder="Digite seu email" >
 
             <label for="email2">Confirme seu email</label>
-            <input type="email" class="form-control" id="email2" placeholder="Confirme seu email" >
+            <input autocomplete="off" type="email" class="form-control" id="email2" placeholder="Confirme seu email" >
 
             <label for="senha">Senha</label>
-            <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite uma senha" >
+            <input autocomplete type="password" class="form-control" id="senha" name="senha" placeholder="Digite uma senha" >
 
             <label for="senha2">Senha</label>
-            <input type="password" class="form-control" id="senha2" name="senha2" placeholder="Confirme sua senha" >
+            <input autocomplete type="password" class="form-control" id="senha2" name="senha2" placeholder="Confirme sua senha" >
 
             <button id="enviar" type="submit" class="btn">Enviar</button>
 
