@@ -1,6 +1,11 @@
 //Esconde a mensagem de erro na tela de cadastro assim que ela aparecer
 $("#alert-blank").hide()
 
+//Garante que todas as células do calendário tem o mesmo tamanho
+var alt_celula = $("#calendario .col").css("width")
+$("#calendario .row").css({"height":alt_celula})
+
+//Verificação do cadastro
 $("#enviar").on("click",e=>{
 
     //Previne default e carrega todos os inputs do formulário
@@ -87,4 +92,6 @@ $("#enviar").on("click",e=>{
             break;
     }
 })
+
+
 
