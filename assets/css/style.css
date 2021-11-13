@@ -62,10 +62,41 @@ nav a:not(#logo):hover{
 
 /* Container do conteúdo */
 #content{
-    min-height: 90vh;
+    max-height: fit-content;
     padding: 25px;
     box-shadow: 0 0 0.5em gray;
     margin-top: 100px;
     margin-bottom: 30px;
 
+}
+
+@media (min-width:600px) and (max-width:1000px) {
+    #logo{
+        font-size: 1.4em;
+        padding: 18px;
+    }    
+
+    nav a{
+        font-size: 1em;
+        margin-left: 5px;
+        padding: 23px 15px;
+    }
+}
+
+
+@media (max-width:600px) {
+    #logo{
+        display:none  
+    }    
+
+    nav a{
+        font-size: 1em;
+        margin-left: 5px;
+        padding: 23px 15px;
+    }
+
+    nav{
+        display: flex;
+        justify-content: center;
+    }
 }
