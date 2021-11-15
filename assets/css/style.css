@@ -1,0 +1,102 @@
+/* Acho que as variáveis precisam estar dentro de um seletor
+   então eu apliquei a tudo */
+*{
+    --verde:#9fd855ef;
+    --verde-claro: #aef058ef;
+    --verde-escuro: #002A22;
+    --marrom:#635255;
+    --texto-claro:#ffffff;
+    --text-escuro:#000000;
+    --escuro:#000000;
+    --claro:#dbddda;
+}
+
+/* Usado para forçar a altura da area de conteúdo e deixar o fundo mais escuro */
+html, body{
+    min-height: 100%;
+    margin: 0;
+    background-color: var(--claro);
+}
+
+/* barra de navegação */
+nav{
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 70px;
+    background-color: var(--verde);
+    position: fixed;
+    top: 0;
+    box-shadow: 0 0 0.5em gray;
+}
+
+/* Links da barra de navegação e logo */
+nav a, nav button {
+    float: right;
+    margin-left:10px;
+    text-decoration:none;
+    color: var(--texto-escuro);
+    padding: 23px;
+    height: 100%;
+    /**font-family: 'Times New Roman', Times, serif;**/
+    font-size: 1.2em;
+    background-color: transparent;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    
+}
+
+nav a:not(#logo):hover{
+    background-color:var(--texto-claro) !important;
+    color: var(--text-escuro);
+    border-bottom: 4px solid var(--escuro);
+}
+
+#logo{
+    float: left;
+    font-size: 2em;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    color: var(--texto-escuro);
+    padding: 12px;
+}
+
+/* Container do conteúdo */
+#content{
+    max-height: fit-content;
+    padding: 25px;
+    box-shadow: 0 0 0.5em gray;
+    margin-top: 100px;
+    margin-bottom: 30px;
+
+}
+
+@media (min-width:600px) and (max-width:1000px) {
+    #logo{
+        font-size: 1.4em;
+        padding: 18px;
+    }    
+
+    nav a{
+        font-size: 1em;
+        margin-left: 5px;
+        padding: 23px 15px;
+    }
+}
+
+
+@media (max-width:600px) {
+    #logo{
+        display:none  
+    }    
+
+    nav a{
+        font-size: 1em;
+        margin-left: 5px;
+        padding: 23px 15px;
+    }
+
+    nav{
+        display: flex;
+        justify-content: center;
+    }
+}
