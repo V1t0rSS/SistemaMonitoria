@@ -1,6 +1,6 @@
 <?php
 
-class GrupoMonitoria Extends Monitor{
+class GrupoMonitoria {
    
     protected $id;
     protected $disciplina;
