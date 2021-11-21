@@ -11,11 +11,11 @@ class GrupoMonitoria Extends Monitor{
     }
     
     public function get_disciplina() {
-        return $this->nome;
+        return $this->disciplina;
     }
 	
 	public function get_monitor() {
-        return $this->nome;
+        return $this->monitor;
     }
 	
     public function set_id($id) {
@@ -23,13 +23,13 @@ class GrupoMonitoria Extends Monitor{
         return $this;
     }
 
-    public function set_disciplina($matricula) {
-        $this->matricula = $matricula;
+    public function set_disciplina($disciplina) {
+        $this->disciplina = $disciplina;
         return $this;
     }
 	
-	public function set_monitor($id) {
-		$this->id = $id;
+	public function set_monitor($monitor) {
+		$this->monitor = $monitor;
         return $this;
     }
     
