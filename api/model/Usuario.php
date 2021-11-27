@@ -6,6 +6,7 @@ class Usuario {
     protected $nome;
     protected $matricula;
     protected $email;
+    protected $senha;
     protected $telefone;
     protected $tipousuario;
 
@@ -30,8 +31,12 @@ class Usuario {
         return $this->email;
     }
 
-    public function get_email() {
-        return $this->email;
+    public function get_senha() {
+        return $this->senha;
+    }
+
+    public function get_telefone() {
+        return $this->telefone;
     }
 
     public function set_id($id) {
@@ -51,6 +56,11 @@ class Usuario {
 
     public function set_email($email) {
         $this->email = $email;
+        return $this;
+    }
+
+    public function set_senha($senha) {
+        $this->senha = $senha;
         return $this;
     }
     

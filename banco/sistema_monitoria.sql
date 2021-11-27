@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27-Nov-2021 às 18:34
+-- Tempo de geração: 27-Nov-2021 às 19:34
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 7.3.27
 
@@ -32,7 +32,7 @@ CREATE TABLE `aluno_eventomonitoria` (
   `eventomonitoria_id` int(11) NOT NULL,
   `aluno_id` int(11) NOT NULL,
   `presente` int(11) DEFAULT NULL,
-  `inativo` int(11) DEFAULT NULL
+  `intencao` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -84,7 +84,7 @@ CREATE TABLE `monitoria` (
 CREATE TABLE `monitor_monitoria` (
   `id` int(11) NOT NULL,
   `monitoria_id` int(11) NOT NULL,
-  `usuario_id` int(11) NOT NULL,
+  `monitor_id` int(11) NOT NULL,
   `data_inicio` date NOT NULL,
   `data_fim` date NOT NULL,
   `inativo` int(11) DEFAULT NULL
@@ -120,9 +120,9 @@ INSERT INTO `tipousuario` (`id`, `descricao`) VALUES
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
   `tipousuario_id` int(11) NOT NULL,
-  `nome` int(11) NOT NULL,
-  `email` int(11) NOT NULL,
-  `matricula` int(11) DEFAULT NULL,
+  `nome` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `matricula` varchar(45) DEFAULT NULL,
   `senha` varchar(45) NOT NULL,
   `telefone` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -165,8 +165,8 @@ ALTER TABLE `monitoria`
 --
 ALTER TABLE `monitor_monitoria`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_monitor_monitoria` (`usuario_id`),
-  ADD KEY `fk_monitoria_monitor` (`monitoria_id`);
+  ADD KEY `fk_monitoria_monitor` (`monitoria_id`),
+  ADD KEY `fk_monitor_monitoria` (`monitor_id`);
 
 --
 -- Índices para tabela `tipousuario`
@@ -255,7 +255,7 @@ ALTER TABLE `monitoria`
 -- Limitadores para a tabela `monitor_monitoria`
 --
 ALTER TABLE `monitor_monitoria`
-  ADD CONSTRAINT `fk_monitor_monitoria` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`),
+  ADD CONSTRAINT `fk_monitor_monitoria` FOREIGN KEY (`monitor_id`) REFERENCES `usuario` (`id`),
   ADD CONSTRAINT `fk_monitoria_monitor` FOREIGN KEY (`monitoria_id`) REFERENCES `monitoria` (`id`);
 
 --
