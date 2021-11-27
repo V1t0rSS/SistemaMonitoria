@@ -1,5 +1,6 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . "/api/model/Aluno.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/api/model/Usuario.php";
 
-class Monitor extends Aluno {
+class Monitor extends Usuario {
 }
+?>

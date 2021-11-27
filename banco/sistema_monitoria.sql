@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27-Nov-2021 às 14:48
+-- Tempo de geração: 27-Nov-2021 às 18:34
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 7.3.27
 
@@ -71,6 +71,7 @@ CREATE TABLE `eventomonitoria` (
 CREATE TABLE `monitoria` (
   `id` int(11) NOT NULL,
   `professor_id` int(11) NOT NULL,
+  `disciplina_id` int(11) NOT NULL,
   `titulo` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -156,7 +157,8 @@ ALTER TABLE `eventomonitoria`
 --
 ALTER TABLE `monitoria`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_monitoria_usuario` (`professor_id`);
+  ADD KEY `fk_monitoria_usuario` (`professor_id`),
+  ADD KEY `fk_monitoria_disciplina` (`disciplina_id`);
 
 --
 -- Índices para tabela `monitor_monitoria`
@@ -233,19 +235,20 @@ ALTER TABLE `usuario`
 -- Limitadores para a tabela `aluno_eventomonitoria`
 --
 ALTER TABLE `aluno_eventomonitoria`
-  ADD CONSTRAINT `fk_aluno_eventomonitoria` FOREIGN KEY (`aluno_id`) REFERENCES `aluno_eventomonitoria` (`id`),
-  ADD CONSTRAINT `fk_eventomonitoria_aluno` FOREIGN KEY (`eventomonitoria_id`) REFERENCES `aluno_eventomonitoria` (`id`);
+  ADD CONSTRAINT `fk_aluno_eventomonitoria` FOREIGN KEY (`aluno_id`) REFERENCES `usuario` (`id`),
+  ADD CONSTRAINT `fk_eventomonitoria_aluno` FOREIGN KEY (`eventomonitoria_id`) REFERENCES `eventomonitoria` (`id`);
 
 --
 -- Limitadores para a tabela `eventomonitoria`
 --
 ALTER TABLE `eventomonitoria`
-  ADD CONSTRAINT `fk_eventomonitoria_monitoria` FOREIGN KEY (`monitoria_id`) REFERENCES `eventomonitoria` (`id`);
+  ADD CONSTRAINT `fk_eventomonitoria_monitoria` FOREIGN KEY (`monitoria_id`) REFERENCES `monitoria` (`id`);
 
 --
 -- Limitadores para a tabela `monitoria`
 --
 ALTER TABLE `monitoria`
+  ADD CONSTRAINT `fk_monitoria_disciplina` FOREIGN KEY (`disciplina_id`) REFERENCES `disciplina` (`id`),
   ADD CONSTRAINT `fk_monitoria_usuario` FOREIGN KEY (`professor_id`) REFERENCES `usuario` (`id`);
 
 --

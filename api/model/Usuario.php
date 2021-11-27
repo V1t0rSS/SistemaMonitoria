@@ -1,12 +1,18 @@
 <?php
 
-class Aluno {
+class Usuario {
    
     protected $id;
     protected $nome;
     protected $matricula;
     protected $email;
     protected $telefone;
+    protected $tipousuario;
+
+    const ADMINISTRADOR = 1;
+    const PROFESSOR = 2;
+    const MONITOR = 3;
+    const ALUNO = 4;
 
     public function get_id() {
         return $this->id;
@@ -54,3 +60,4 @@ class Aluno {
     }
     
 }
+?>
