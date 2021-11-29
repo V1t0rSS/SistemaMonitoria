@@ -12,7 +12,7 @@ class DisciplinaMapper {
     }
     public function salvar(Disciplina $disciplina) {
         $sql = "INSERT INTO disciplina (titulo) VALUES ('"
-                . $disciplina->get_titulo() . ");";
+                . $disciplina->get_titulo() . "');";
         if ($error = $this->pdo->query($sql) == TRUE) {
             echo "Criada com sucesso";
         } else {
