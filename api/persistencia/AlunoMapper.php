@@ -17,7 +17,7 @@ class AlunoMapper {
                 . ",'" . $aluno->get_email() . "'"
                 . ",'" . $aluno->get_senha() . "'"
                 . ",'" . $aluno->get_telefone() . "'"
-                . ",4);";
+                . ",3);";
         if ($error = $this->pdo->query($sql) == TRUE) {
             echo "Criado com sucesso";
         } else {
