@@ -1,6 +1,6 @@
 <?php
 
-class Monitoria {
+class Disciplina {
    
     protected $id;
     protected $titulo;
