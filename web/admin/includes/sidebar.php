@@ -1,3 +1,7 @@
+<?php
+if($_SERVER['SERVER_NAME'] == 'localhost')
+    $basepath = '/SistemaMonitoria';
+?>
 <div class="l-navbar" id="nav-bar">
     <nav class="nav">
         <div>
@@ -6,7 +10,7 @@
                 <span class="nav_logo-name">SistemaMonitoria</span>
             </a>
             <div class="nav_list">
-                <a href="#" class="nav_link active">
+                <a href="<?= $basepath ?>/web/admin/dashboard" class="nav_link <?php if (basename(getcwd()) == "dashboard") echo 'active'; ?>">
                     <i class='bx bx-home nav_icon'></i>
                     <span class="nav_name">Início</span>
                 </a>
@@ -24,7 +28,7 @@
                     <i class='bx bx-bookmark nav_icon'></i>
                     <span class="nav_name">Notícias</span>
                 </a>
-                <a href="#" class="nav_link">
+                <a href="<?= $basepath ?>/web/admin/alunos" class="nav_link <?php if (basename(getcwd()) == "alunos") echo 'active'; ?>">
                     <i class='bx bxs-user-account'></i>
                     <span class="nav_name">Alunos</span>
                 </a>
