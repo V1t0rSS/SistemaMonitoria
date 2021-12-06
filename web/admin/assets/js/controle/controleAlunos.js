@@ -2,16 +2,33 @@ var controleAluno = new ControleAluno();
 
 function ControleAluno() {
 
-    this.get = function () {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onload = function () {
-
-            var listaAlunos = JSON.parse(this.responseText);
-            carregaListaAlunos(listaAlunos);
-
-        };
-        xmlhttp.open("GET", "/SistemaMonitoria/api/alunos.php");
-        xmlhttp.send();
+    this.get = function (table_id) {
+        $.ajax({
+            'url': "/SistemaMonitoria/api/alunos.php",
+            'method': "GET",
+            'contentType': 'application/json'
+        }).done( function(data) {
+            json = JSON.parse(data);
+            $(table_id).dataTable( {
+                "aaData": json,
+                "columns": [
+                    { "data": "nome" },
+                    { "data": "matricula" },
+                    { "data": "email" }
+                ],
+                "language": {
+                    "info": "Mostrando _START_ à _END_ de _TOTAL_ alunos",
+                    "emptyTable": "Nenhum aluno para mostrar",
+                    "lengthMenu": "Mostrando _MENU_ alunos",
+                    "paginate": {
+                        "first":      "Primeiro",
+                        "last":       "Último",
+                        "next":       "Próx.",
+                        "previous":   "Ant."
+                    }
+                }
+            })
+        })
     };
 
     this.delete = function (id) {
