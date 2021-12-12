@@ -21,7 +21,7 @@ class Router implements IRouter {
     }
 
     public function run() {
-
+		session_start(); // inicializa a sessao
         try {
             if ($this->get()) {
                 return;
