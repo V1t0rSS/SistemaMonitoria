@@ -5,11 +5,28 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/SistemaMonitoria/api/model/Aluno.php"
 class AlunoMapper {
     
     public $dbuser = "root";
-    public $dbpass = "";
+    public $dbpass = "root";
     public $pdo;
+	
     function __construct() {
         $this->pdo = new PDO("mysql:host=localhost;dbname=sistema_monitoria", $this->dbuser, $this->dbpass);
     }
+	
+	public function autenticacao($aluno) {
+        $sql = "select * from usuario where email='" .
+               $aluno->get_email() . "' and senha='"
+               . $aluno->get_senha() . "'";
+        $statement = $this->pdo->prepare($sql);
+		error_log(print_r("eNTROU",TRUE)); 
+        $statement->execute();
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        if(count($results)>0){
+            return $results[0];
+        }else{
+             throw new Exception("Usuario ou senha invalidos");
+        }      
+    }	
+	
     public function salvar(Aluno $aluno) {
         $sql = "INSERT INTO usuario (nome, matricula, email, senha, telefone, tipousuario_id) VALUES ('"
                 . $aluno->get_nome() . "'"
