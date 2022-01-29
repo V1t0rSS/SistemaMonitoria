@@ -11,6 +11,7 @@ class Alunos implements IRouter
 
     public function login($aluno)
     {
+		error_log(print_r("achou o login", TRUE)); 
         $alunoMapper = new AlunoMapper();
         $resposta = $alunoMapper->autenticacao($aluno);
         if ($resposta) {

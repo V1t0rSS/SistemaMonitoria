@@ -13,11 +13,11 @@ class AlunoMapper {
     }
 	
 	public function autenticacao($aluno) {
+		error_log(print_r("XXX entrou XXX",TRUE)); 
         $sql = "select * from usuario where email='" .
                $aluno->get_email() . "' and senha='"
                . $aluno->get_senha() . "'";
         $statement = $this->pdo->prepare($sql);
-		error_log(print_r("eNTROU",TRUE)); 
         $statement->execute();
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         if(count($results)>0){

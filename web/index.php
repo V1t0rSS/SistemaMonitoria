@@ -20,7 +20,7 @@
                 var controleUsuarios = new ControleUsuarios();
                 var formLogin = document.getElementById("login_aluno");
                 //esse evento será disparado quando o formulario for submetido
-                formLogin.addEventListener('submit', controleUsuarios.login);  
+                formLogin.addEventListener('submit', controleUsuarios.login);
            });
 
         </script>

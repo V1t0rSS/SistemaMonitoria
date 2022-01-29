@@ -3,15 +3,15 @@ controleUsuario = new ControleUsuarios();
 function ControleUsuarios() {
 
     this.login = function (event) {
-        event.preventDefault();//previne que o browser faça a submissao, premitindo que seja feita com javascript.
+        event.preventDefault();             //previne que o browser faça a submissao, premitindo que seja feita com javascript.
         var formElement = document.getElementById("login_aluno");
         //https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects
-        //var tarefaForm = new FormData(formElement);
+        var tarefaForm = new FormData(formElement);
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onload = function () {
-			alert("teste");
             if (xmlhttp.readyState === xmlhttp.DONE) {
-                if (xmlhttp.status === 200)
+                console.log(xmlhttp.status)
+                if (xmlhttp.status === 201)
                 {   //controleTarefa.get();
                     alert("Usuario logado com sucesso");
                     //addLogout();
@@ -21,9 +21,8 @@ function ControleUsuarios() {
                 }
             }
         };
-        //alert("test2e");
-        xmlhttp.open("POST", "/api/alunos.php/login");
-        //xmlhttp.send(tarefaForm);
+        xmlhttp.open("POST", "/SistemaMonitoria/api/Alunos.php/login");
+        xmlhttp.send(tarefaForm);
     };
     
     
