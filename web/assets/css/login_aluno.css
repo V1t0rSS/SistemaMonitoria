@@ -31,7 +31,7 @@ label{
     margin-bottom:3px;
 }
 
-#enviar{
+#enviar, #submit{
     display: block;
     width: 100% !important;
     background-color: var(--verde);
@@ -49,8 +49,8 @@ label{
     text-shadow: 0 1px 1px #333;
     -webkit-border-radius: 5px;
     transition: all 0.2s linear;
-  
 }
+
 
 #titulo{
     margin-bottom: 50px;
@@ -117,4 +117,6 @@ h1:after{
     border-top: 1px solid #dbe5e8;
     -webkit-border-radius: 0 0  5px 5px;
     border-radius: 0 0  5px 5px;
-  }
+}
+
+
