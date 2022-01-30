@@ -12,10 +12,10 @@ function ControleUsuarios() {
             if (xmlhttp.readyState === xmlhttp.DONE) {
                 console.log(xmlhttp.status)
                 if (xmlhttp.status === 201)
-                {   //controleTarefa.get();
+                {   
                     alert("Usuario logado com sucesso");
-                    //addLogout();
-                    //document.getElementById("login_modal").style = 'none';
+                    window.location.href = "./aluno/index.php";
+
                 } else {
                     alert("Usuario ou senha incorretos");
                 }
@@ -29,6 +29,7 @@ function ControleUsuarios() {
      this.logout = function (event) {
         event.preventDefault();//previne que o browser faça a submissao, premitindo que seja feita com javascript.
        var xmlhttp = new XMLHttpRequest();
+       console.log("entrou");
         xmlhttp.onload = function () {
             if (xmlhttp.readyState === xmlhttp.DONE) {
                 if (xmlhttp.status === 200)
@@ -41,7 +42,7 @@ function ControleUsuarios() {
                 }
             }
         };
-        xmlhttp.open("POST", "/api/Alunos.php/logout");
+        xmlhttp.open("POST", "/SistemaMonitoria/api/Alunos.php/logout");
         xmlhttp.send();
     };
    

@@ -17,6 +17,7 @@ class Alunos implements IRouter
         if ($resposta) {
             $_SESSION["id"] = $resposta['id'];
             $_SESSION["nome"] = $resposta['nome'];
+			$_SESSION['logado'] = true;
             //$_SESSION["usuario_tipo"] = $resposta['tipousuario_id'];
             //$_SESSION["usuario_matricula"] = $resposta['matricula'];
         }
