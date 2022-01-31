@@ -32,4 +32,11 @@ class AlunoMapper {
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         return  $results;
     }
+    public function remover($id) {
+        $sql = "DELETE FROM usuario WHERE id = ". $id;
+        $statement = $this->pdo->prepare($sql );
+        if($statement->execute() == false) {
+            throw new Exception("Erro ao deletar aluno");
+        }
+    }
 }

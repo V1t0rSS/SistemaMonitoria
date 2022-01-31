@@ -13,7 +13,6 @@ class Router implements IRouter {
     
     public function get() {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-           // var_dump($this->class);
             $this->class->get();
             return true;
         }
@@ -41,7 +40,6 @@ class Router implements IRouter {
         }
     }
 
-    //https://restfulapi.net/http-methods/#delete
     public function delete() {
         if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
             $this->class->delete();
@@ -53,7 +51,7 @@ class Router implements IRouter {
     public function post() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $this->class->post();
-             http_response_code(201);
+            http_response_code(201);
             return true;
         }
         return false;

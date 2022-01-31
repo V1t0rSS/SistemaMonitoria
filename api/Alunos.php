@@ -9,12 +9,16 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/SistemaMonitoria/api/rotas/Router.php
 class Alunos implements IRouter {
 
     public function delete() {
-        http_response_code(404);
-        throw new Exception("Não implementado ainda");
+        if (isset($_REQUEST['id'])) {
+            $alunoMapper = new AlunoMapper();
+            $alunoMapper->remover($_REQUEST['id']);
+        } else {
+            http_response_code(400);
+            throw new Exception("Faltando o identificador do aluno");
+        }
     }
 
     public function get() {
-
       $alunoMapper = new AlunoMapper();
       $resposta = $alunoMapper->buscar();
       echo json_encode($resposta);
@@ -31,6 +35,8 @@ class Alunos implements IRouter {
             $aluno->set_email($_POST['email']);
         }if (isset($_POST['telefone'])) {
             $aluno->set_telefone($_POST['telefone']);
+        }if (isset($_POST['senha'])) {
+            $aluno->set_senha($_POST['senha']);
         }
         $alunoMapper = new AlunoMapper();
         $resposta = $alunoMapper->salvar($aluno);

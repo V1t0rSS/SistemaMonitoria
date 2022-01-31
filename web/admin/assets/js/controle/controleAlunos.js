@@ -20,7 +20,7 @@ function ControleAluno() {
             if (xmlhttp.status === 200)
             {
                 controleAluno.get();
-                alert("Aluno removida com sucesso");
+                alert("Aluno removido com sucesso");
             } else {
                 alert("Erro ao remover a Aluno");
             }
@@ -40,8 +40,7 @@ function ControleAluno() {
                 if (xmlhttp.status === 201)
                 {
                     controleAluno.get();
-                    alert("Aluno criada com sucesso");
-                    document.getElementById("adicionar").style = 'none';
+                    alert("Aluno criado com sucesso");
                 } else {
                     alert("Erro ao criar a aluno");
                 }
@@ -64,7 +63,7 @@ function ControleAluno() {
                 if (xmlhttp.status === 200)
                 {
                     controleAluno.get();
-                    alert("Aluno atualizada com sucesso");
+                    alert("Aluno atualizado com sucesso");
                     document.getElementById("atualizar").style = 'none';
                 } else {
                     alert("Erro ao atualizar a aluno");
