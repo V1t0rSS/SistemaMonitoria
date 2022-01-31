@@ -32,5 +32,35 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
     linkColor.forEach(l=> l.addEventListener('click', colorLink))
     
+    if($("select[name='professor_id']")) {
+        $.ajax({
+            'url': "/SistemaMonitoria/api/Professores.php",
+            'method': "GET",
+            'contentType': 'application/json'
+        }).done( function(data) {
+            json = JSON.parse(data);
+            options = "";
+            json.forEach(professor => {
+                options += "<option value='"+ professor.id +"'>"+ professor.nome +"</option>";
+            });
+            $("select[name='professor_id']").html(options);
+        })
+    }
+
+    if($("select[name='disciplina_id']")) {
+        $.ajax({
+            'url': "/SistemaMonitoria/api/Disciplinas.php",
+            'method': "GET",
+            'contentType': 'application/json'
+        }).done( function(data) {
+            json = JSON.parse(data);
+            options = "";
+            json.forEach(disciplina => {
+                options += "<option value='"+ disciplina.id +"'>"+ disciplina.titulo +"</option>";
+            });
+            $("select[name='disciplina_id']").html(options);
+        })
+    }
+
 // Your code to run since DOM is loaded and ready
 });

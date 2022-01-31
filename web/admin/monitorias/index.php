@@ -44,31 +44,66 @@
                     <div class="modal-body">
                         <!-- FORMULÁRIO DE NOVO MONITORIA -->
                         <div class="mb-3">
-                            <label for="nome" class="col-form-label">Nome:</label>
-                            <input type="text" class="form-control" name="nome" id="nome">
+                            <label for="titulo" class="col-form-label">Titulo:</label>
+                            <input type="text" class="form-control" name="titulo" id="titulo">
+                        </div>
+                        <div class="mb-3">
+                            <label for="professor_id" class="col-form-label">Responsável:</label>
+                            <select class="form-control" name="professor_id" id="professor_id">
+                                <option value="">Selecione...</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="disciplina_id" class="col-form-label">Disciplina:</label>
+                            <select class="form-control" name="disciplina_id" id="disciplina_id">
+                                <option value="">Selecione...</option>
+                            </select>
                         </div>
                         <div class="mb-3 row">
                             <div class="col-6">
-                                <label for="telefone" class="col-form-label">Telefone:</label>
-                                <input type="telefone" class="form-control" name="telefone" id="telefone">
+                                <label for="data_ini" class="col-form-label">Data de Início:</label>
+                                <input type="date" class="form-control" name="data_ini" id="data_ini">
                             </div>
                             <div class="col-6">
-                                <label for="matricula" class="col-form-label">Matrícula:</label>
-                                <input type="text" class="form-control" name="matricula" id="matricula">
+                                <label for="data_fim" class="col-form-label">Data de Fim:</label>
+                                <input type="date" class="form-control" name="data_fim" id="data_fim">
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="col-form-label">Email:</label>
-                            <input type="text" class="form-control" name="email" id="email">
+                            <label for="hora" class="col-form-label">Hora:</label>
+                            <input type="hour" class="form-control" name="hora" id="hora">
                         </div>
-                        <div class="mb-3 row">
-                            <div class="col-6">
-                                <label for="senha" class="col-form-label">Senha:</label>
-                                <input type="password" class="form-control" name="senha" id="senha">
-                            </div>
-                            <div class="col-6">
-                                <label for="confirma-senha" class="col-form-label">Confirmar Senha:</label>
-                                <input type="password" class="form-control" name="confirma-senha" id="confirma-senha">
+                        <div class="mb-3">
+                            <label for="diassemana" class="col-form-label">Dias da Semana:</label>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="diassemana" id="inlineRadio1" value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">Seg</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="diassemana" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">Ter</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="diassemana" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">Qua</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="diassemana" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">Qui</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="diassemana" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">Sex</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="diassemana" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">Sab</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="diassemana" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">Dom</label>
+                                </div>
                             </div>
                         </div>
                     </div>
