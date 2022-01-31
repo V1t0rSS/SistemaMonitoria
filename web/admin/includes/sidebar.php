@@ -24,15 +24,11 @@ if($_SERVER['SERVER_NAME'] == 'localhost')
                     <i class='bx bx-user nav_icon'></i>
                     <span class="nav_name">Monitorias</span>
                 </a>
-                <a href="#" class="nav_link">
-                    <i class='bx bx-bookmark nav_icon'></i>
-                    <span class="nav_name">Notícias</span>
-                </a>
                 <a href="<?= $basepath ?>/web/admin/alunos" class="nav_link <?php if (basename(getcwd()) == "alunos") echo 'active'; ?>">
                     <i class='bx bxs-user-account'></i>
                     <span class="nav_name">Alunos</span>
                 </a>
-                <a href="#" class="nav_link">
+                <a href="<?= $basepath ?>/web/admin/monitores" class="nav_link <?php if (basename(getcwd()) == "monitores") echo 'active'; ?>">
                     <i class='bx bxs-user-account'></i>
                     <span class="nav_name">Monitores</span>
                 </a>

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="lib/bootstrap/dist/css/">
     <link rel="stylesheet" href="assets/css/login_aluno.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
-	<script src="assets/js/controleUsuarios.js"></script>
+	<script src="assets/js/controleAlunos.js"></script>
 </head>
 
 <body>
@@ -17,10 +17,10 @@
             //esse evento será disparado quando a pagina for carregada
             document.addEventListener("DOMContentLoaded", function() {
                 console.log("DOM completamente carregado e analisado");
-                var controleUsuarios = new ControleUsuarios();
+                var controleAlunos = new ControleAlunos();
                 var formLogin = document.getElementById("login_aluno");
                 //esse evento será disparado quando o formulario for submetido
-                formLogin.addEventListener('submit', controleUsuarios.login);
+                formLogin.addEventListener('submit', controleAlunos.login);
            });
 
         </script>

@@ -1,10 +1,10 @@
-var controleAluno = new ControleAluno();
+var controleMonitor = new ControleMonitor();
 
-function ControleAluno() {
+function ControleMonitor() {
 
     this.get = function (table_id) {
         $.ajax({
-            'url': "/SistemaMonitoria/api/Alunos.php",
+            'url': "/SistemaMonitoria/api/Monitores.php",
             'method': "GET",
             'contentType': 'application/json'
         }).done( function(data) {
@@ -20,13 +20,13 @@ function ControleAluno() {
                         return "<button type='button' class='btn btn-primary'><i class='bx bx-pencil'></i></button>"
                     }},
                     { "render": function(data, type, row) {
-                        return "<button type='button' class='btn btn-danger' onclick='controleAluno.delete("+row.id+")'><i class='bx bx-trash'></i></button>"
+                        return "<button type='button' class='btn btn-danger' onclick='controleMonitor.delete("+row.id+")'><i class='bx bx-trash'></i></button>"
                     }}
                 ],
                 "language": {
-                    "info": "Mostrando _START_ à _END_ de _TOTAL_ alunos",
-                    "emptyTable": "Nenhum aluno para mostrar",
-                    "lengthMenu": "Mostrando _MENU_ alunos",
+                    "info": "Mostrando _START_ à _END_ de _TOTAL_ monitores",
+                    "emptyTable": "Nenhum monitor para mostrar",
+                    "lengthMenu": "Mostrando _MENU_ monitores",
                     "paginate": {
                         "first":      "Primeiro",
                         "last":       "Último",
@@ -43,60 +43,60 @@ function ControleAluno() {
         xmlhttp.onload = function () {
             if (xmlhttp.status === 200)
             {
-                controleAluno.get("#lista_de_alunos");
-                alert("Aluno removido com sucesso");
+                controleMonitor.get("#lista_de_monitores");
+                alert("Monitor removido com sucesso");
             } else {
-                alert("Erro ao remover a Aluno");
+                alert("Erro ao remover a Monitor");
             }
         };
-        xmlhttp.open("DELETE", "/SistemaMonitoria/api/alunos.php?id=" + id);
+        xmlhttp.open("DELETE", "/SistemaMonitoria/api/monitores.php?id=" + id);
         xmlhttp.send();
     };
 
     this.post = function (event) {
         event.preventDefault();//previne que o browser faça a submissao, premitindo que seja feita com javascript.
-        var formElement = document.getElementById("adicionaraluno");
+        var formElement = document.getElementById("adicionarmonitor");
         //https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects
-        var alunoForm = new FormData(formElement);
+        var monitorForm = new FormData(formElement);
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onload = function () {
             if (xmlhttp.readyState === xmlhttp.DONE) {
                 if (xmlhttp.status === 201)
                 {
-                    controleAluno.get("#lista_de_alunos");
-                    alert("Aluno criado com sucesso");
+                    controleMonitor.get("#lista_de_monitores");
+                    alert("Monitor criado com sucesso");
                 } else {
-                    alert("Erro ao criar a aluno");
+                    alert("Erro ao criar a monitor");
                 }
             }
-            //var listaAlunos = JSON.parse(this.responseText);
-            //carregaListaAlunos(listaAlunos);
+            //var listaMonitores = JSON.parse(this.responseText);
+            //carregaListaMonitores(listaMonitores);
         };
-        xmlhttp.open("POST", "/SistemaMonitoria/api/alunos.php");
-        xmlhttp.send(alunoForm);
+        xmlhttp.open("POST", "/SistemaMonitoria/api/monitores.php");
+        xmlhttp.send(monitorForm);
     };
     
     this.put = function (event) {
         event.preventDefault();//previne que o browser faça a submissao, premitindo que seja feita com javascript.
-        var formElement = document.getElementById("atualizaraluno");
+        var formElement = document.getElementById("atualizarmonitor");
         //https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects
-        var alunoForm = new FormData(formElement);
+        var monitorForm = new FormData(formElement);
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onload = function () {
             if (xmlhttp.readyState === xmlhttp.DONE) {
                 if (xmlhttp.status === 200)
                 {
-                    controleAluno.get();
-                    alert("Aluno atualizado com sucesso");
+                    controleMonitor.get();
+                    alert("Monitor atualizado com sucesso");
                     document.getElementById("atualizar").style = 'none';
                 } else {
-                    alert("Erro ao atualizar a aluno");
+                    alert("Erro ao atualizar a monitor");
                 }
             }
-            //var listaAlunos = JSON.parse(this.responseText);
-            //carregaListaAlunos(listaAlunos);
+            //var listaMonitores = JSON.parse(this.responseText);
+            //carregaListaMonitores(listaMonitores);
         };
-        xmlhttp.open("POST", "/SistemaMonitoria/api/alunos.php?id=" + formElement['atualizarid'].value);
-        xmlhttp.send(alunoForm);
+        xmlhttp.open("POST", "/SistemaMonitoria/api/monitores.php?id=" + formElement['atualizarid'].value);
+        xmlhttp.send(monitorForm);
     };
 }

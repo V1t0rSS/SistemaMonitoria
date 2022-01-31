@@ -16,10 +16,10 @@
             //esse evento será disparado quando a pagina for carregada
             document.addEventListener("DOMContentLoaded", function() {
                 console.log("DOM completamente carregado e analisado");
-                var controleUsuarios = new ControleUsuarios();
+                var controleAlunos = new ControleAlunos();
                 var formLogin = document.getElementById("login_aluno");
                 //esse evento será disparado quando o formulario for submetido
-                formLogin.addEventListener('submit', controleUsuarios.login);  
+                formLogin.addEventListener('submit', controleAlunos.login);  
            });
 
         </script>

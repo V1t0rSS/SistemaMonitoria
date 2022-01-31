@@ -1,6 +1,6 @@
-controleUsuario = new ControleUsuarios();
+controleAluno = new ControleAlunos();
 
-function ControleUsuarios() {
+function ControleAlunos() {
 
     this.login = function (event) {
         event.preventDefault();             //previne que o browser faça a submissao, premitindo que seja feita com javascript.

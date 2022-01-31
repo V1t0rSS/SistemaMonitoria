@@ -1,8 +1,8 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . "/SistemaMonitoria/api/model/Aluno.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/SistemaMonitoria/api/model/Monitor.php";
 
-class AlunoMapper {
+class MonitorMapper {
     
     public $dbuser = "root";
     public $dbpass = "";
@@ -12,9 +12,9 @@ class AlunoMapper {
         $this->pdo = new PDO("mysql:host=localhost;dbname=sistema_monitoria", $this->dbuser, $this->dbpass);
     }
 	
-	public function autenticacao($aluno) {
+	public function autenticacao($monitor) {
 		error_log(print_r("XXX entrou XXX",TRUE)); 
-        $sql = "select * from usuario where tipousuario_id = 3 and email='" . $aluno->get_email() . "' and senha='" . $aluno->get_senha() . "'";
+        $sql = "select * from usuario where tipousuario_id = 4 and email='" . $monitor->get_email() . "' and senha='" . $monitor->get_senha() . "'";
         $statement = $this->pdo->prepare($sql);
         $statement->execute();
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -25,23 +25,23 @@ class AlunoMapper {
         }      
     }	
 	
-    public function salvar(Aluno $aluno) {
+    public function salvar(Monitor $monitor) {
         $sql = "INSERT INTO usuario (nome, matricula, email, senha, telefone, tipousuario_id) VALUES ('"
-                . $aluno->get_nome() . "'"
-                . ",'" . $aluno->get_matricula() . "'"
-                . ",'" . $aluno->get_email() . "'"
-                . ",'" . $aluno->get_senha() . "'"
-                . ",'" . $aluno->get_telefone() . "'"
-                . ",3);";
+                . $monitor->get_nome() . "'"
+                . ",'" . $monitor->get_matricula() . "'"
+                . ",'" . $monitor->get_email() . "'"
+                . ",'" . $monitor->get_senha() . "'"
+                . ",'" . $monitor->get_telefone() . "'"
+                . ",4);";
         if ($error = $this->pdo->query($sql) == TRUE) {
             echo "Criado com sucesso";
         } else {
             echo "Error: " . $sql . "<br>" . $error;
-            throw new Exception("Erro ao criar aluno" . $error);
+            throw new Exception("Erro ao criar monitor" . $error);
         }
     }
     public function buscar() {
-        $sql = "select * from usuario WHERE tipousuario_id = 3";
+        $sql = "select * from usuario WHERE tipousuario_id = 4";
         $statement = $this->pdo->prepare($sql );
         $statement->execute();
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -51,7 +51,7 @@ class AlunoMapper {
         $sql = "DELETE FROM usuario WHERE id = ". $id;
         $statement = $this->pdo->prepare($sql );
         if($statement->execute() == false) {
-            throw new Exception("Erro ao deletar aluno");
+            throw new Exception("Erro ao deletar monitor");
         }
     }
 }
