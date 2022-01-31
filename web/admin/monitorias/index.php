@@ -13,16 +13,16 @@
     <!-- Main Container-->
     <div id="main-container" class="bg-body">
         <div class="d-flex justify-content-between">
-            <h3>Alunos</h3>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#usuarioModal">Adicionar Aluno <i class='bx bx-plus'></i></button>
+            <h3>Monitorias</h3>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#monitoriaModal">Adicionar Monitoria <i class='bx bx-plus'></i></button>
         </div>
         <div class="container mt-4 px-0">
-            <table id="lista_de_alunos" class="table table-striped" style="width:100%">
+            <table id="lista_de_monitorias" class="table table-striped" style="width:100%">
                 <thead>
                     <tr>
-                        <th>Nome</th>
-                        <th>Matrícula</th>
-                        <th>Email</th>
+                        <th>Titulo</th>
+                        <th>Disciplina</th>
+                        <th>Responsável</th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -33,16 +33,16 @@
         </div>
     </div>
     
-    <div class="modal fade" id="usuarioModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="monitoriaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Novo Aluno</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Novo Monitoria</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form id="adicionaraluno" action="#" method="POST">
+                <form id="adicionarmonitoria" action="#" method="POST">
                     <div class="modal-body">
-                        <!-- FORMULÁRIO DE NOVO ALUNO -->
+                        <!-- FORMULÁRIO DE NOVO MONITORIA -->
                         <div class="mb-3">
                             <label for="nome" class="col-form-label">Nome:</label>
                             <input type="text" class="form-control" name="nome" id="nome">
@@ -84,13 +84,13 @@
 </body>
 </html>
 <?php include('../includes/scripts_footer.php') ?>
-<script src="../assets/js/controle/controleAlunos.js"></script>
+<script src="../assets/js/controle/controleMonitorias.js"></script>
 
 <script>
     $(document).ready(function() {
         $('#example').DataTable();
-        $('#usuarioModal').modal();
-        $("#adicionaraluno").on('submit', controleAluno.post);
-        controleAluno.get("#lista_de_alunos");
+        $('#monitoriaModal').modal();
+        $("#adicionarmonitoria").on('submit', controleMonitoria.post);
+        controleMonitoria.get("#lista_de_monitorias");
     });
 </script>

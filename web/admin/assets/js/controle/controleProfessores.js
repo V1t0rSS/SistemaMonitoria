@@ -1,10 +1,10 @@
-var controleMonitor = new ControleMonitor();
+var controleProfessor = new ControleProfessor();
 
-function ControleMonitor() {
+function ControleProfessor() {
 
     this.get = function (table_id) {
         $.ajax({
-            'url': "/SistemaMonitoria/api/Monitores.php",
+            'url': "/SistemaMonitoria/api/Professores.php",
             'method': "GET",
             'contentType': 'application/json'
         }).done( function(data) {
@@ -20,13 +20,13 @@ function ControleMonitor() {
                         return "<button type='button' class='btn btn-primary'><i class='bx bx-pencil'></i></button>"
                     }},
                     { "render": function(data, type, row) {
-                        return "<button type='button' class='btn btn-danger' onclick='controleMonitor.delete("+row.id+")'><i class='bx bx-trash'></i></button>"
+                        return "<button type='button' class='btn btn-danger' onclick='controleProfessor.delete("+row.id+")'><i class='bx bx-trash'></i></button>"
                     }}
                 ],
                 "language": {
-                    "info": "Mostrando _START_ à _END_ de _TOTAL_ monitores",
-                    "emptyTable": "Nenhum monitor para mostrar",
-                    "lengthMenu": "Mostrando _MENU_ monitores",
+                    "info": "Mostrando _START_ à _END_ de _TOTAL_ professores",
+                    "emptyTable": "Nenhum professor para mostrar",
+                    "lengthMenu": "Mostrando _MENU_ professores",
                     "paginate": {
                         "first":      "Primeiro",
                         "last":       "Último",
@@ -43,60 +43,60 @@ function ControleMonitor() {
         xmlhttp.onload = function () {
             if (xmlhttp.status === 200)
             {
-                controleMonitor.get("#lista_de_monitores");
-                alert("Monitor removido com sucesso");
+                controleProfessor.get("#lista_de_professores");
+                alert("Professor removido com sucesso");
             } else {
-                alert("Erro ao remover a Monitor");
+                alert("Erro ao remover a Professor");
             }
         };
-        xmlhttp.open("DELETE", "/SistemaMonitoria/api/Monitores.php?id=" + id);
+        xmlhttp.open("DELETE", "/SistemaMonitoria/api/Professores.php?id=" + id);
         xmlhttp.send();
     };
 
     this.post = function (event) {
         event.preventDefault();//previne que o browser faça a submissao, premitindo que seja feita com javascript.
-        var formElement = document.getElementById("adicionarmonitor");
+        var formElement = document.getElementById("adicionarprofessor");
         //https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects
-        var monitorForm = new FormData(formElement);
+        var professorForm = new FormData(formElement);
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onload = function () {
             if (xmlhttp.readyState === xmlhttp.DONE) {
                 if (xmlhttp.status === 201)
                 {
-                    controleMonitor.get("#lista_de_monitores");
-                    alert("Monitor criado com sucesso");
+                    controleProfessor.get("#lista_de_professores");
+                    alert("Professor criado com sucesso");
                 } else {
-                    alert("Erro ao criar a monitor");
+                    alert("Erro ao criar a professor");
                 }
             }
-            //var listaMonitores = JSON.parse(this.responseText);
-            //carregaListaMonitores(listaMonitores);
+            //var listaProfessores = JSON.parse(this.responseText);
+            //carregaListaProfessores(listaProfessores);
         };
-        xmlhttp.open("POST", "/SistemaMonitoria/api/Monitores.php");
-        xmlhttp.send(monitorForm);
+        xmlhttp.open("POST", "/SistemaMonitoria/api/Professores.php");
+        xmlhttp.send(professorForm);
     };
     
     this.put = function (event) {
         event.preventDefault();//previne que o browser faça a submissao, premitindo que seja feita com javascript.
-        var formElement = document.getElementById("atualizarmonitor");
+        var formElement = document.getElementById("atualizarprofessor");
         //https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects
-        var monitorForm = new FormData(formElement);
+        var professorForm = new FormData(formElement);
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onload = function () {
             if (xmlhttp.readyState === xmlhttp.DONE) {
                 if (xmlhttp.status === 200)
                 {
-                    controleMonitor.get();
-                    alert("Monitor atualizado com sucesso");
+                    controleProfessor.get();
+                    alert("Professor atualizado com sucesso");
                     document.getElementById("atualizar").style = 'none';
                 } else {
-                    alert("Erro ao atualizar a monitor");
+                    alert("Erro ao atualizar a professor");
                 }
             }
-            //var listaMonitores = JSON.parse(this.responseText);
-            //carregaListaMonitores(listaMonitores);
+            //var listaProfessores = JSON.parse(this.responseText);
+            //carregaListaProfessores(listaProfessores);
         };
-        xmlhttp.open("POST", "/SistemaMonitoria/api/Monitores.php?id=" + formElement['atualizarid'].value);
-        xmlhttp.send(monitorForm);
+        xmlhttp.open("POST", "/SistemaMonitoria/api/Professores.php?id=" + formElement['atualizarid'].value);
+        xmlhttp.send(professorForm);
     };
 }

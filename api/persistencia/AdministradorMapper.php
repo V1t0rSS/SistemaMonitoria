@@ -26,7 +26,7 @@ class AdministradorMapper {
         }
     }
     public function buscar() {
-        $sql = "select * from usuario";
+        $sql = "select * from usuario WHERE tipousuario_id = 1";
         $statement = $this->pdo->prepare($sql );
         $statement->execute();
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);

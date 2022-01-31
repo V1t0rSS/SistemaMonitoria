@@ -23,10 +23,20 @@ class MonitoriaMapper {
         }
     }
     public function buscar() {
-        $sql = "select * from monitoria";
+        $sql = " select monitoria.*, disciplina.titulo as disciplina, professor.nome as responsavel from monitoria ";
+        $sql .= " LEFT JOIN disciplina ON monitoria.disciplina_id = disciplina.id ";
+        $sql .= " LEFT JOIN usuario as professor ON monitoria.professor_id = professor.id ";
+        
         $statement = $this->pdo->prepare($sql );
         $statement->execute();
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         return  $results;
+    }
+    public function remover($id) {
+        $sql = "DELETE FROM monitoria WHERE id = ". $id;
+        $statement = $this->pdo->prepare($sql );
+        if($statement->execute() == false) {
+            throw new Exception("Erro ao deletar monitoria");
+        }
     }
 }

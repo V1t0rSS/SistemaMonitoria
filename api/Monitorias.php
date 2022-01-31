@@ -9,8 +9,13 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/SistemaMonitoria/api/rotas/Router.php
 class Monitorias implements IRouter {
 
     public function delete() {
-        http_response_code(404);
-        throw new Exception("Não implementado ainda");
+        if (isset($_REQUEST['id'])) {
+            $monitoriaMapper = new MonitoriaMapper();
+            $monitoriaMapper->remover($_REQUEST['id']);
+        } else {
+            http_response_code(400);
+            throw new Exception("Faltando o identificador da monitoria");
+        }
     }
 
     public function get() {

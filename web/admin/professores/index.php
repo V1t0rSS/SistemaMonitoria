@@ -13,11 +13,11 @@
     <!-- Main Container-->
     <div id="main-container" class="bg-body">
         <div class="d-flex justify-content-between">
-            <h3>Alunos</h3>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#usuarioModal">Adicionar Aluno <i class='bx bx-plus'></i></button>
+            <h3>Professores</h3>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#usuarioModal">Adicionar Professor <i class='bx bx-plus'></i></button>
         </div>
         <div class="container mt-4 px-0">
-            <table id="lista_de_alunos" class="table table-striped" style="width:100%">
+            <table id="lista_de_professores" class="table table-striped" style="width:100%">
                 <thead>
                     <tr>
                         <th>Nome</th>
@@ -37,12 +37,12 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Novo Aluno</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Novo Professor</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form id="adicionaraluno" action="#" method="POST">
+                <form id="adicionarprofessor" action="#" method="POST">
                     <div class="modal-body">
-                        <!-- FORMULÁRIO DE NOVO ALUNO -->
+                        <!-- FORMULÁRIO DE NOVO PROFESSOR -->
                         <div class="mb-3">
                             <label for="nome" class="col-form-label">Nome:</label>
                             <input type="text" class="form-control" name="nome" id="nome">
@@ -84,13 +84,13 @@
 </body>
 </html>
 <?php include('../includes/scripts_footer.php') ?>
-<script src="../assets/js/controle/controleAlunos.js"></script>
+<script src="../assets/js/controle/controleProfessores.js"></script>
 
 <script>
     $(document).ready(function() {
         $('#example').DataTable();
         $('#usuarioModal').modal();
-        $("#adicionaraluno").on('submit', controleAluno.post);
-        controleAluno.get("#lista_de_alunos");
+        $("#adicionarprofessor").on('submit', controleProfessor.post);
+        controleProfessor.get("#lista_de_professores");
     });
 </script>

@@ -84,7 +84,6 @@
 </body>
 </html>
 <?php include('../includes/scripts_footer.php') ?>
-<script src="../assets/js/visao/index.js"></script>
 <script src="../assets/js/controle/controleMonitores.js"></script>
 
 <script>

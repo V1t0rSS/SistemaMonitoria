@@ -49,7 +49,7 @@ function ControleAluno() {
                 alert("Erro ao remover a Aluno");
             }
         };
-        xmlhttp.open("DELETE", "/SistemaMonitoria/api/alunos.php?id=" + id);
+        xmlhttp.open("DELETE", "/SistemaMonitoria/api/Alunos.php?id=" + id);
         xmlhttp.send();
     };
 
@@ -72,7 +72,7 @@ function ControleAluno() {
             //var listaAlunos = JSON.parse(this.responseText);
             //carregaListaAlunos(listaAlunos);
         };
-        xmlhttp.open("POST", "/SistemaMonitoria/api/alunos.php");
+        xmlhttp.open("POST", "/SistemaMonitoria/api/Alunos.php");
         xmlhttp.send(alunoForm);
     };
     
@@ -96,7 +96,7 @@ function ControleAluno() {
             //var listaAlunos = JSON.parse(this.responseText);
             //carregaListaAlunos(listaAlunos);
         };
-        xmlhttp.open("POST", "/SistemaMonitoria/api/alunos.php?id=" + formElement['atualizarid'].value);
+        xmlhttp.open("POST", "/SistemaMonitoria/api/Alunos.php?id=" + formElement['atualizarid'].value);
         xmlhttp.send(alunoForm);
     };
 }
