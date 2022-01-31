@@ -4,8 +4,7 @@
         <a id="logo" href="index.php">MonitoriasOnline</a>
     </span>
 
-    <a  href="cadastro.php">Cadastro</a>
-    <a  href="index.php">Login</a>
+    <a  href="includes/sair.php">Logout</a>
     <a  href="">Salas</a>
     <a  href="">Notificações</a>
 </nav>

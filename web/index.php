@@ -8,13 +8,27 @@
     <link rel="stylesheet" href="lib/bootstrap/dist/css/">
     <link rel="stylesheet" href="assets/css/login_aluno.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+	<script src="assets/js/controleUsuarios.js"></script>
 </head>
 
 <body>
 
+        <script>
+            //esse evento será disparado quando a pagina for carregada
+            document.addEventListener("DOMContentLoaded", function() {
+                console.log("DOM completamente carregado e analisado");
+                var controleUsuarios = new ControleUsuarios();
+                var formLogin = document.getElementById("login_aluno");
+                //esse evento será disparado quando o formulario for submetido
+                formLogin.addEventListener('submit', controleUsuarios.login);
+           });
+
+        </script>
+
     <header>
         <?php
-            include("includes/header.php")
+            include("includes/header.php");
+            include("includes/verifica.php");
         ?>
     </header>
 
@@ -25,27 +39,27 @@
 
             <h1 id="titulo" class="display-6">Login</h1>
 
-            <form>
-            <label for="email">E-mail</label>
+            <form id="login_aluno" method="post">
+                <input type="hidden" name="method" value="LOGIN"/>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">@</span>
-                </div>
-                <input autocomplete type="text" class="form-control" id="email" name="email" placeholder="Digite seu e-mail" >
-            </div>
+				<label for="email">E-mail</label>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+					<span class="input-group-text" id="basic-addon1">@</span>
+					</div>
+					<input autocomplete type="text" class="form-control" id="email" name="email" placeholder="Digite seu e-mail" >
+				</div>
 
-            <label for="senha">Senha</label>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">
-                    <i class="bi bi-key"></i>
-                </span>
-                </div>
-                <input autocomplete type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha" >
-            </div>
-
-            <button id="enviar" type="submit" class="btn">Enviar</button>
+				<label for="senha">Senha</label>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+					<span class="input-group-text" id="basic-addon1">
+						<i class="bi bi-key"></i>
+					</span>
+					</div>
+					<input autocomplete type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha" >
+				</div>
+				<input type="submit" value="Login" id="submit" class="btn"></input>
             </form>
 
             <div id="contatesuporte" class="center-block bg-light">

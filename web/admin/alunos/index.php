@@ -14,7 +14,7 @@
     <div id="main-container" class="bg-body">
         <div class="d-flex justify-content-between">
             <h3>Alunos</h3>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#usuarioModal">Adicionar Usuário</button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#usuarioModal">Adicionar Usuário <i class='bx bx-plus'></i></button>
         </div>
         <div class="container mt-4 px-0">
             <table id="lista_de_alunos" class="table table-striped" style="width:100%">
@@ -94,5 +94,5 @@
         $("#adicionaraluno").on('submit', controleAluno.post);
     });
 
-    controleAluno.get();
+    controleAluno.get("#lista_de_alunos");
 </script>

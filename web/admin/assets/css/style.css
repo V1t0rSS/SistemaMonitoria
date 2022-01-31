@@ -2,7 +2,7 @@
 
 :root {
     --header-height: 3rem;
-    --nav-width: 68px;
+    --sidebar-width: 68px;
     --first-color: rgb(33,37,41);
     --first-color-light: #b2b0b9;
     --white-color: #F7F6FB;
@@ -70,7 +70,7 @@ a {
     position: fixed;
     top: 0;
     left: -30%;
-    width: var(--nav-width);
+    width: var(--sidebar-width);
     height: 100vh;
     background-color: var(--first-color);
     padding: .5rem 1rem 0 0;
@@ -124,12 +124,12 @@ a {
     font-size: 1.25rem
 }
 
-.showNavBar {
+.show-sidebar {
     left: 0
 }
 
 .padded {
-    padding-left: calc(var(--nav-width) + 1rem) !important;
+    padding-left: calc(var(--sidebar-width) + 1rem) !important;
     transition: .5s
 }
 
@@ -162,7 +162,7 @@ a {
     }
 
     #main-container {
-        padding-left: calc(var(--nav-width) + 2rem);
+        padding-left: calc(var(--sidebar-width) + 2rem);
         padding-right: 3rem;
         padding-top: 20px;
         padding-bottom: 20px;
@@ -171,7 +171,7 @@ a {
 
     .header {
         height: calc(var(--header-height) + 1rem);
-        padding: 0 3rem 0 calc(var(--nav-width) + 2rem)
+        padding: 0 3rem 0 calc(var(--sidebar-width) + 2rem)
     }
 
     .l-navbar {
@@ -179,12 +179,12 @@ a {
         padding: 1rem 1rem 0 0
     }
 
-    .showNavBar {
-        width: calc(var(--nav-width) + 156px)
+    .show-sidebar {
+        width: calc(var(--sidebar-width) + 156px)
     }
 
     .padded {
-        padding-left: calc(var(--nav-width) + 188px) !important;
+        padding-left: calc(var(--sidebar-width) + 188px) !important;
         transition: .5s
     }
 }

@@ -12,6 +12,17 @@
 
 <body>
 
+<script>
+            //esse evento será disparado quando a pagina for carregada
+            document.addEventListener("DOMContentLoaded", function() {
+                console.log("DOM completamente carregado e analisado");
+                var controleUsuarios = new ControleUsuarios();
+                var formLogin = document.getElementById("login_aluno");
+                //esse evento será disparado quando o formulario for submetido
+                formLogin.addEventListener('submit', controleUsuarios.login);  
+           });
+
+        </script>
     <header>
         <?php
             include("includes/header.php")
@@ -27,7 +38,7 @@
             <span></span>
         </div>
 
-        <form>
+        <form id="cadastro_aluno" method="post">
 
             <label for="nome">Nome</label>
             <input autocomplete type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" >
@@ -47,7 +58,7 @@
             <label for="senha">Senha</label>
             <input autocomplete type="password" class="form-control" id="senha" name="senha" placeholder="Digite uma senha" >
 
-            <label for="senha2">Senha</label>
+            <label for="senha2">Confirmar Senha</label>
             <input autocomplete type="password" class="form-control" id="senha2" name="senha2" placeholder="Confirme sua senha" >
 
             <button id="enviar" type="submit" class="btn">Enviar</button>
