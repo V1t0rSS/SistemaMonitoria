@@ -22,10 +22,12 @@ class MonitoriaMapper {
             throw new Exception("Erro ao criar monitoria" . $error);
         }
     }
-    public function buscar() {
+    public function buscar($id = null) {
         $sql = " select monitoria.*, disciplina.titulo as disciplina, professor.nome as responsavel from monitoria ";
         $sql .= " LEFT JOIN disciplina ON monitoria.disciplina_id = disciplina.id ";
         $sql .= " LEFT JOIN usuario as professor ON monitoria.professor_id = professor.id ";
+        if($id)
+            $sql .= " WHERE monitoria.id = ". $id;
         
         $statement = $this->pdo->prepare($sql );
         $statement->execute();
@@ -38,5 +40,12 @@ class MonitoriaMapper {
         if($statement->execute() == false) {
             throw new Exception("Erro ao deletar monitoria");
         }
+    }
+    public function getProxId() {
+        $sql = " select max(monitoria.id) as prox_id from monitoria ";
+        $statement = $this->pdo->prepare($sql );
+        $statement->execute();
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return  $results[0]["prox_id"] + 1;
     }
 }

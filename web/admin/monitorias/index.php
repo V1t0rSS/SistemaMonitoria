@@ -61,17 +61,23 @@
                         </div>
                         <div class="mb-3 row">
                             <div class="col-6">
-                                <label for="data_ini" class="col-form-label">Data de Início:</label>
-                                <input type="date" class="form-control" name="data_ini" id="data_ini">
+                                <label for="data_inicio" class="col-form-label">Data de Início:</label>
+                                <input type="date" class="form-control" name="data_inicio" id="data_inicio">
                             </div>
                             <div class="col-6">
                                 <label for="data_fim" class="col-form-label">Data de Fim:</label>
                                 <input type="date" class="form-control" name="data_fim" id="data_fim">
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="hora" class="col-form-label">Hora:</label>
-                            <input type="hour" class="form-control" name="hora" id="hora">
+                        <div class="mb-3 row">
+                            <div class="col-6">
+                                <label for="hora_inicio" class="col-form-label">Hora Início:</label>
+                                <input type="time" class="form-control" name="hora_inicio" id="hora_inicio">
+                            </div>
+                            <div class="col-6">
+                                <label for="hora_fim" class="col-form-label">Hora Fim:</label>
+                                <input type="time" class="form-control" name="hora_fim" id="hora_fim">
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label for="diassemana" class="col-form-label">Dias da Semana:</label>

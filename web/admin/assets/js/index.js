@@ -62,5 +62,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         })
     }
 
+    $('.time').mask('00:00');
+
 // Your code to run since DOM is loaded and ready
 });
