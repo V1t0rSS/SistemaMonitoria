@@ -112,7 +112,7 @@ function ControleAdministradores() {
                 if (xmlhttp.status === 201)
                 {   
                     alert("Usuario logado com sucesso");
-                    window.location.href = "./admin/dashboard";
+                    window.location.href = "./dashboard";
 
                 } else {
                     alert("Usuario ou senha incorretos");
@@ -132,9 +132,9 @@ function ControleAdministradores() {
             if (xmlhttp.readyState === xmlhttp.DONE) {
                 if (xmlhttp.status === 200)
                 {
-                      carregaListaTarefas([]);
+                    carregaListaTarefas([]);
                     alert("Deslogado com sucesso");
-                    addLogin();
+                    window.location.href = "./";
                 } else {
                     alert("Nao foi possivel deslogar");
                 }
