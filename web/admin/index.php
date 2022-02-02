@@ -27,7 +27,6 @@
     <header>
         <?php
 			include("includes/header.php");
-            include("includes/verifica.php");
         ?>
     </header>
 

@@ -8,8 +8,11 @@
     <?php include('../includes/head.php') ?>
 </head>
 <body class="bg-light">
-    <?php include('../includes/header.php') ?>
-    <?php include('../includes/sidebar.php') ?>
+    <?php
+    include('../includes/header.php');
+    include('../includes/sidebar.php');
+    require "../includes/verifica.php";
+    ?>
     <!-- Main Container-->
     <div id="main-container" class="bg-body padded">
         <div class="d-flex justify-content-between">
