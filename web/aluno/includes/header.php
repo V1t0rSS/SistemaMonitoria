@@ -1,3 +1,7 @@
+<?php
+    if($_SERVER['SERVER_NAME'] == 'localhost')
+        $basepath = '/SistemaMonitoria';
+?>
 <nav class="clearfix">
     <span>
         <img src="" alt="">
@@ -5,6 +9,6 @@
     </span>
 
     <a  href="includes/sair.php">Logout</a>
-    <a  href="">Salas</a>
-    <a  href="">Notificações</a>
+    <a  href="<?= $basepath ?>/web/aluno/monitorias">Monitorias</a>
+    <a  href="<?= $basepath ?>/web/aluno/dashboard">Eventos</a>
 </nav>

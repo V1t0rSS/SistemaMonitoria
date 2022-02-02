@@ -26,7 +26,8 @@ class EventoMonitoriaMapper {
         }
     }
     public function buscar() {
-        $sql = " SELECT eventomonitoria.* FROM eventomonitoria ";
+        $sql = " SELECT eventomonitoria.*, monitoria.titulo FROM eventomonitoria ";
+        $sql .= " INNER JOIN monitoria ON monitoria.id = eventomonitoria.monitoria_id ";
         
         $statement = $this->pdo->prepare($sql);
         $statement->execute();

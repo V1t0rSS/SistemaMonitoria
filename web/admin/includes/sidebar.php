@@ -2,7 +2,7 @@
 if($_SERVER['SERVER_NAME'] == 'localhost')
     $basepath = '/SistemaMonitoria';
 ?>
-<div class="l-navbar" id="nav-bar">
+<div class="l-navbar show-sidebar" id="nav-bar">
     <nav class="nav">
         <div>
             <a href="#" class="nav_logo">

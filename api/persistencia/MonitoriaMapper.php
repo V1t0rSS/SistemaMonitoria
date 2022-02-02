@@ -41,11 +41,14 @@ class MonitoriaMapper {
             throw new Exception("Erro ao deletar monitoria");
         }
     }
-    public function getProxId() {
+    public function getUltimoId() {
         $sql = " select max(monitoria.id) as prox_id from monitoria ";
         $statement = $this->pdo->prepare($sql );
         $statement->execute();
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-        return  $results[0]["prox_id"] + 1;
+        if($results[0]["prox_id"])
+            return $results[0]["prox_id"];
+        else
+            return 1;
     }
 }

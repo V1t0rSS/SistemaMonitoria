@@ -41,11 +41,11 @@ class Monitorias implements IRouter {
             $monitoria->set_disciplina_id($_POST['disciplina_id']);
 		if (isset($_POST['titulo']))
             $monitoria->set_titulo($_POST['titulo']);
-        // pega o id a ser gerado da monitoria
         $monitoriaMapper = new monitoriaMapper();
-        $monitoria_id = $monitoriaMapper->getProxId();
         // salva
         $resposta = $monitoriaMapper->salvar($monitoria);
+        // pega o id a ser gerado da monitoria
+        $monitoria_id = $monitoriaMapper->getUltimoId();
 
         // insere eventos de monitoria durante o periodo determinado
 		if (isset($_POST['data_inicio']) && isset($_POST['data_fim'])) {

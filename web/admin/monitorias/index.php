@@ -11,7 +11,7 @@
     <?php include('../includes/header.php') ?>
     <?php include('../includes/sidebar.php') ?>
     <!-- Main Container-->
-    <div id="main-container" class="bg-body">
+    <div id="main-container" class="bg-body padded">
         <div class="d-flex justify-content-between">
             <h3>Monitorias</h3>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#monitoriaModal">Adicionar Monitoria <i class='bx bx-plus'></i></button>

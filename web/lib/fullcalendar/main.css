@@ -6,6 +6,11 @@
   cursor: not-allowed;
 }
 
+a {
+  color: initial !important;
+  text-decoration: initial !important;
+}
+
 /* TODO: not attached to body. attached to specific els. move */
 .fc-unselectable {
   -webkit-user-select: none;

@@ -11,7 +11,7 @@
     <?php include('../includes/header.php') ?>
     <?php include('../includes/sidebar.php') ?>
     <!-- Main Container-->
-    <div id="main-container" class="bg-body">
+    <div id="main-container" class="bg-body padded">
         <div class="d-flex justify-content-between">
             <h3>Início</h3>
             <div><i class='bx bx-calendar'></i> <span>22/10/2021</span></div>
