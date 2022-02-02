@@ -71,7 +71,7 @@
 	
 	    <footer>
         <?php
-            include("includes/footer.php")
+            include("includes/scripts_footer.php")
         ?>
     </footer>
 
