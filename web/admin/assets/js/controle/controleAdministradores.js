@@ -1,6 +1,6 @@
-var controleAdministrador = new ControleAdministrador();
+controleAdministrador = new ControleAdministradores();
 
-function ControleAdministrador() {
+function ControleAdministradores() {
 
     this.get = function (table_id) {
         $.ajax({
@@ -99,4 +99,51 @@ function ControleAdministrador() {
         xmlhttp.open("POST", "/SistemaMonitoria/api/Administradores.php?id=" + formElement['atualizarid'].value);
         xmlhttp.send(administradorForm);
     };
+
+    this.login = function (event) {
+        event.preventDefault();             //previne que o browser faça a submissao, premitindo que seja feita com javascript.
+        var formElement = document.getElementById("login_admin");
+        //https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects
+        var tarefaForm = new FormData(formElement);
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onload = function () {
+            if (xmlhttp.readyState === xmlhttp.DONE) {
+                console.log(xmlhttp.status)
+                if (xmlhttp.status === 201)
+                {   
+                    alert("Usuario logado com sucesso");
+                    window.location.href = "./dashboard";
+
+                } else {
+                    alert("Usuario ou senha incorretos");
+                }
+            }
+        };
+        xmlhttp.open("POST", "/SistemaMonitoria/api/Administradores.php/login");
+        xmlhttp.send(tarefaForm);
+    };
+    
+    
+     this.logout = function (event) {
+        event.preventDefault();//previne que o browser faça a submissao, premitindo que seja feita com javascript.
+       var xmlhttp = new XMLHttpRequest();
+       console.log("entrou");
+        xmlhttp.onload = function () {
+            if (xmlhttp.readyState === xmlhttp.DONE) {
+                if (xmlhttp.status === 200)
+                {
+                    carregaListaTarefas([]);
+                    alert("Deslogado com sucesso");
+                    window.location.href = "./";
+                } else {
+                    alert("Nao foi possivel deslogar");
+                }
+            }
+        };
+        xmlhttp.open("POST", "/SistemaMonitoria/api/Administradores.php/logout");
+        var logoutForm = new FormData();
+        logoutForm.append('method', 'LOGOUT');
+        xmlhttp.send(logoutForm);
+    };
+
 }
