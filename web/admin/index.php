@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SistemaTutoria</title>
-    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="lib/bootstrap/dist/css/">
-    <link rel="stylesheet" href="assets/css/login_aluno.css">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
-	<script src="assets/js/controleAlunos.js"></script>
+	<script src="assets/js/controle/controleAdministradores.js"></script>
 </head>
 
 <body>
@@ -17,18 +15,16 @@
             //esse evento será disparado quando a pagina for carregada
             document.addEventListener("DOMContentLoaded", function() {
                 console.log("DOM completamente carregado e analisado");
-                var controleAlunos = new ControleAlunos();
-                var formLogin = document.getElementById("login_aluno");
+                var controleAdministradores = new ControleAdministradores();
+                var formLogin = document.getElementById("login_admin");
                 //esse evento será disparado quando o formulario for submetido
-                formLogin.addEventListener('submit', controleAlunos.login);
+                formLogin.addEventListener('submit', controleAdministradores.login);
            });
-
         </script>
 
     <header>
         <?php
-            include("includes/header.php");
-            include("includes/verifica.php");
+            // include("includes/verifica.php");
         ?>
     </header>
 
@@ -39,7 +35,7 @@
 
             <h1 id="titulo" class="display-6">Login</h1>
 
-            <form id="login_aluno" method="post">
+            <form id="login_admin" method="post">
                 <input type="hidden" name="method" value="LOGIN"/>
 
 				<label for="email">E-mail</label>
@@ -73,7 +69,7 @@
 
     <footer>
         <?php
-            include("includes/footer.php")
+            //include("includes/footer.php")
         ?>
     </footer>
 
