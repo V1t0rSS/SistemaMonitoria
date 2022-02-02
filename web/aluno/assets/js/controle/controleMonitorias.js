@@ -22,8 +22,8 @@ function ControleMonitoria() {
                         + "</div>"
                     }},
                     { "data": "titulo" },
+                    { "data": "disciplina" },
                     { "data": "responsavel" },
-                    { "data": "disciplina" }
                 ],
                 "language": {
                     "info": "Mostrando _START_ à _END_ de _TOTAL_ monitorias",
