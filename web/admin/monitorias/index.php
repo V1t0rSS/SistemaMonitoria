@@ -83,31 +83,31 @@
                             <label for="diassemana" class="col-form-label">Dias da Semana:</label>
                             <div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="diassemana" id="inlineRadio1" value="option1">
+                                    <input class="form-check-input" type="checkbox" name="diassemana[]" id="inlineRadio1" value="Monday">
                                     <label class="form-check-label" for="inlineRadio1">Seg</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="diassemana" id="inlineRadio2" value="option2">
+                                    <input class="form-check-input" type="checkbox" name="diassemana[]" id="inlineRadio2" value="Tuesday">
                                     <label class="form-check-label" for="inlineRadio2">Ter</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="diassemana" id="inlineRadio2" value="option2">
+                                    <input class="form-check-input" type="checkbox" name="diassemana[]" id="inlineRadio2" value="Wednesday">
                                     <label class="form-check-label" for="inlineRadio2">Qua</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="diassemana" id="inlineRadio2" value="option2">
+                                    <input class="form-check-input" type="checkbox" name="diassemana[]" id="inlineRadio2" value="Thursday">
                                     <label class="form-check-label" for="inlineRadio2">Qui</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="diassemana" id="inlineRadio2" value="option2">
+                                    <input class="form-check-input" type="checkbox" name="diassemana[]" id="inlineRadio2" value="Friday">
                                     <label class="form-check-label" for="inlineRadio2">Sex</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="diassemana" id="inlineRadio2" value="option2">
+                                    <input class="form-check-input" type="checkbox" name="diassemana[]" id="inlineRadio2" value="Sunday">
                                     <label class="form-check-label" for="inlineRadio2">Sab</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="diassemana" id="inlineRadio2" value="option2">
+                                    <input class="form-check-input" type="checkbox" name="diassemana[]" id="inlineRadio2" value="Sunday">
                                     <label class="form-check-label" for="inlineRadio2">Dom</label>
                                 </div>
                             </div>

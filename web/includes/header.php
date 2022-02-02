@@ -6,6 +6,4 @@
 
     <a  href="cadastro.php">Cadastro</a>
     <a  href="index.php">Login</a>
-    <a  href="">Salas</a>
-    <a  href="">Notificações</a>
 </nav>

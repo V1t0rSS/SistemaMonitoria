@@ -56,12 +56,14 @@ class Monitorias implements IRouter {
             $intervalo = DateInterval::createFromDateString('1 day');
             $period = new DatePeriod($inicio, $intervalo, $fim);
             foreach ($period as $dt) {
-                $eventomonitoria = new EventoMonitoria();
-                $eventomonitoria->set_monitoria_id($monitoria_id);
-                $eventomonitoria->set_data($dt->format("Y-m-d"));
-                $eventomonitoria->set_hora_inicio($_POST['hora_inicio']);
-                $eventomonitoria->set_hora_fim($_POST['hora_fim']);
-                $eventomonitoriaMapper->salvar($eventomonitoria);
+                if(in_array($dt->format("l"), $_POST["diassemana"])) {
+                    $eventomonitoria = new EventoMonitoria();
+                    $eventomonitoria->set_monitoria_id($monitoria_id);
+                    $eventomonitoria->set_data($dt->format("Y-m-d"));
+                    $eventomonitoria->set_hora_inicio($_POST['hora_inicio']);
+                    $eventomonitoria->set_hora_fim($_POST['hora_fim']);
+                    $eventomonitoriaMapper->salvar($eventomonitoria);
+                }
             }
         }
 
