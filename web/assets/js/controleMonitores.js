@@ -32,7 +32,7 @@ function ControleMonitores() {
        console.log("entrou");
         xmlhttp.onload = function () {
             if (xmlhttp.readyState === xmlhttp.DONE) {
-                if (xmlhttp.status === 200)
+                if (xmlhttp.status === 200 || xmlhttp.status === 201)
                 {
                       carregaListaTarefas([]);
                     alert("Deslogado com sucesso");
