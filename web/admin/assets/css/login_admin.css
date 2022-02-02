@@ -1,0 +1,131 @@
+@import url(style.css);
+
+.left-inner-addon {
+    position: relative;
+}
+.left-inner-addon i {
+    position: absolute;
+    padding: 10px 12px;
+    pointer-events: none;
+    color: #666;
+}
+.left-inner-addon input.form-control {
+    padding-left: 30px;
+}
+
+input{
+    margin-bottom: 15px !important;
+    width: 80% !important;
+}
+
+.mb-3{
+    margin-bottom: 20px !important;
+    width: 100% !important;
+    width: 80%; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+label{
+    margin-left: 1px;
+    margin-bottom:3px;
+}
+
+#enviar, #submit{
+    display: block;
+    width: 100% !important;
+    background-color: var(--verde);
+    color: var(--texto-escuro);
+    box-shadow: 0px 0px 1px 1px gray;
+    font-size: 1.0em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;  
+    cursor: pointer; 
+    padding: 8px 5px;
+    border: var(--claro);  
+    border-radius: 5px;
+    text-shadow: 0 1px 1px #333;
+    -webkit-border-radius: 5px;
+    transition: all 0.2s linear;
+}
+
+
+#titulo{
+    margin-bottom: 50px;
+    text-align: center !important;
+    font-size: 40px;
+    color: var(--texto-escuro);
+    padding: 2px 0 10px 0;
+    /*font-family: Arial,sans-serif;
+    font-weight: bold;*/
+    padding-bottom: 5px;
+}
+
+.hidden{
+    display: none;
+}
+
+#alert-blank{
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: rgba(228, 0, 0, 0.616);
+    color: white;
+    width: fit-content;
+    margin: auto;
+    border-radius: 50px;
+    display: none;
+}
+
+
+/* Container do login */
+#caixaLogin{
+    padding: 30px 25px;
+    max-width: 500px;
+    min-height: 560px;    
+    box-shadow: 0 0 0.5em var(--marrom);
+    margin-top: 100px;
+    margin-bottom: 10px;
+}
+
+/* Container do login */
+#backgroundLogin{
+    min-height: 100%;
+    margin: 0;
+    background-color: #dbddda;
+}
+
+
+h1:after{
+    content: ' ';
+    display: block;
+    width: inherit;
+    height: 2px;
+    margin-top: 10px;
+    background: -webkit-linear-gradient(left, rgba(148, 189, 147, 0) 0%,rgba(148, 189, 147, 0.8) 20%,rgba(148, 189, 147,1) 53%,rgba(148, 189, 147,0.8) 79%,rgba(148, 189, 147,0) 100%); 
+    background: linear-gradient(left, rgba(148, 189, 147,0) 0%,rgba(148, 189, 147,0.8) 20%,rgba(148, 189, 147,1) 53%,rgba(148, 189, 147,0.8) 79%,rgba(148, 189, 147,0) 100%); }
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contatesuporte{
+    background: var(--claro);
+    color: var(--texto-escuro);
+    left: 0px;
+    height: 50px;
+    width: 420px;
+    padding: 15px 20px 10px 10px;
+    font-size: 14px;
+    text-align: right;
+    border-top: 1px solid #dbe5e8;
+    -webkit-border-radius: 0 0  5px 5px;
+    border-radius: 0 0  5px 5px;
+}
+
+
+
+
