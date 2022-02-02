@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27-Nov-2021 às 19:34
+-- Tempo de geração: 02-Fev-2022 às 03:21
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 7.3.27
 
@@ -46,6 +46,13 @@ CREATE TABLE `disciplina` (
   `titulo` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `disciplina`
+--
+
+INSERT INTO `disciplina` (`id`, `titulo`) VALUES
+(1, 'Programação II');
+
 -- --------------------------------------------------------
 
 --
@@ -62,6 +69,40 @@ CREATE TABLE `eventomonitoria` (
   `relatorio` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `eventomonitoria`
+--
+
+INSERT INTO `eventomonitoria` (`id`, `monitoria_id`, `data`, `hora_inicio`, `hora_fim`, `observacao`, `relatorio`) VALUES
+(62, 13, '2022-02-02', '15:00:00', '16:00:00', '', ''),
+(63, 13, '2022-02-03', '15:00:00', '16:00:00', '', ''),
+(64, 13, '2022-02-04', '15:00:00', '16:00:00', '', ''),
+(65, 13, '2022-02-05', '15:00:00', '16:00:00', '', ''),
+(66, 13, '2022-02-06', '15:00:00', '16:00:00', '', ''),
+(67, 13, '2022-02-07', '15:00:00', '16:00:00', '', ''),
+(68, 13, '2022-02-08', '15:00:00', '16:00:00', '', ''),
+(69, 13, '2022-02-09', '15:00:00', '16:00:00', '', ''),
+(70, 14, '2022-02-04', '19:00:00', '20:00:00', '', ''),
+(71, 14, '2022-02-05', '19:00:00', '20:00:00', '', ''),
+(72, 14, '2022-02-06', '19:00:00', '20:00:00', '', ''),
+(73, 14, '2022-02-07', '19:00:00', '20:00:00', '', ''),
+(74, 14, '2022-02-08', '19:00:00', '20:00:00', '', ''),
+(75, 14, '2022-02-09', '19:00:00', '20:00:00', '', ''),
+(76, 14, '2022-02-10', '19:00:00', '20:00:00', '', ''),
+(77, 14, '2022-02-11', '19:00:00', '20:00:00', '', ''),
+(78, 14, '2022-02-12', '19:00:00', '20:00:00', '', ''),
+(79, 14, '2022-02-13', '19:00:00', '20:00:00', '', ''),
+(80, 14, '2022-02-14', '19:00:00', '20:00:00', '', ''),
+(81, 14, '2022-02-15', '19:00:00', '20:00:00', '', ''),
+(82, 14, '2022-02-16', '19:00:00', '20:00:00', '', ''),
+(83, 14, '2022-02-17', '19:00:00', '20:00:00', '', ''),
+(84, 14, '2022-02-18', '19:00:00', '20:00:00', '', ''),
+(85, 14, '2022-02-19', '19:00:00', '20:00:00', '', ''),
+(86, 14, '2022-02-20', '19:00:00', '20:00:00', '', ''),
+(87, 14, '2022-02-21', '19:00:00', '20:00:00', '', ''),
+(88, 14, '2022-02-22', '19:00:00', '20:00:00', '', ''),
+(89, 14, '2022-02-23', '19:00:00', '20:00:00', '', '');
+
 -- --------------------------------------------------------
 
 --
@@ -74,6 +115,14 @@ CREATE TABLE `monitoria` (
   `disciplina_id` int(11) NOT NULL,
   `titulo` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `monitoria`
+--
+
+INSERT INTO `monitoria` (`id`, `professor_id`, `disciplina_id`, `titulo`) VALUES
+(13, 23, 1, 'Prog 2 - Tarde'),
+(14, 23, 1, 'Eng. de Software II');
 
 -- --------------------------------------------------------
 
@@ -126,6 +175,18 @@ CREATE TABLE `usuario` (
   `senha` varchar(45) NOT NULL,
   `telefone` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `tipousuario_id`, `nome`, `email`, `matricula`, `senha`, `telefone`) VALUES
+(2, 4, 'Rodrigo Peres', 'rodrigo@teste.com.br', '20191bsi0204', '124', '999999999'),
+(11, 3, 'Cristina Rosa', 'cris@ifes.com', '123499', '123', '27999190909'),
+(21, 1, 'RENATO P SOUZA', 'renatoperesdesouza@gmail.com', '123412', '123', '27999190909'),
+(22, 4, 'RENATO P SOUZA', 'renmonitor@gmail.com', '123412', '123', '27999190909'),
+(23, 2, 'Guilherme Profesilva', 'guilherme@gmail.com', '093444', '123', '27999190909'),
+(24, 3, 'Renato Peres de Souza', 'renatoperesdesouza@hotmail.com', '123412', '123', '27999190909');
 
 --
 -- Índices para tabelas despejadas
@@ -195,19 +256,19 @@ ALTER TABLE `aluno_eventomonitoria`
 -- AUTO_INCREMENT de tabela `disciplina`
 --
 ALTER TABLE `disciplina`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `eventomonitoria`
 --
 ALTER TABLE `eventomonitoria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT de tabela `monitoria`
 --
 ALTER TABLE `monitoria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de tabela `monitor_monitoria`
@@ -225,7 +286,7 @@ ALTER TABLE `tipousuario`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- Restrições para despejos de tabelas
