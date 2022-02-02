@@ -41,7 +41,7 @@ function ControleMonitoria() {
     this.delete = function (id) {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onload = function () {
-            if (xmlhttp.status === 200)
+            if (xmlhttp.status === 200 || xmlhttp.status === 201)
             {
                 controleMonitoria.get("#lista_de_monitorias");
                 alert("Monitoria removido com sucesso");
@@ -84,7 +84,7 @@ function ControleMonitoria() {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onload = function () {
             if (xmlhttp.readyState === xmlhttp.DONE) {
-                if (xmlhttp.status === 200)
+                if (xmlhttp.status === 200 || xmlhttp.status === 201)
                 {
                     controleMonitoria.get();
                     alert("Monitoria atualizado com sucesso");

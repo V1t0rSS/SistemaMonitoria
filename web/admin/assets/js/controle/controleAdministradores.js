@@ -41,7 +41,7 @@ function ControleAdministrador() {
     this.delete = function (id) {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onload = function () {
-            if (xmlhttp.status === 200)
+            if (xmlhttp.status === 200 || xmlhttp.status === 201)
             {
                 controleAdministrador.get("#lista_de_administradores");
                 alert("Administrador removido com sucesso");
@@ -84,7 +84,7 @@ function ControleAdministrador() {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onload = function () {
             if (xmlhttp.readyState === xmlhttp.DONE) {
-                if (xmlhttp.status === 200)
+                if (xmlhttp.status === 200 || xmlhttp.status === 201)
                 {
                     controleAdministrador.get();
                     alert("Administrador atualizado com sucesso");
